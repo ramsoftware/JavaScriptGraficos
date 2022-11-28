@@ -1,0 +1,25 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Girar línea</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Grosor de las líneas
+  let Grosor = 2;
+  
+  //Instancia una línea y la dibuja
+  let Color = 'blue';
+  let MiLinea = new Linea(70, 90, 210, 280, Grosor, Color);
+  Graficos.objLinea(MiLinea);
+  
+  //Gira la línea 20 grados
+  MiLinea.Girar(20);
+  Graficos.objLinea(MiLinea);
+  
+  //Gira la línea otros 20 grados
+  MiLinea.Girar(20);
+  Graficos.objLinea(MiLinea);
+  
+</script>
+</body></html>

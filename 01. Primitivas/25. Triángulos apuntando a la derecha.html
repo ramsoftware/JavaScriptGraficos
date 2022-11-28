@@ -1,0 +1,37 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Triángulos apuntando a la derecha</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+//Grosor de las líneas
+let Grosor = 2;
+
+//Trabaja con una lista de líneas
+let Triangulos = [];
+
+let pX1 = 420;
+let pY1 = 360;
+let pX2 = 480;
+let pY2 = 400;
+let pX3 = 420;
+let pY3 = 440;
+let constante = 20;
+let color = 'blue';
+
+do {
+    if (color === 'blue') color = 'red'; else color = 'blue';
+    Triangulos.push(new Triangulo(pX1, pY1, pX2, pY2, pX3, pY3, 1, Grosor, color));
+
+	pX1 -= constante;
+	pY1 -= constante;
+	pX2 += constante;
+	pX3 -= constante;
+	pY3 += constante;
+}
+while (pY1 >= 0);
+
+Graficos.TrianguloLista(Triangulos);
+</script>
+</body></html>

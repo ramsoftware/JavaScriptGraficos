@@ -1,0 +1,29 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Simulando curvas</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Grosor de las líneas
+  let Grosor = 2;
+  
+  //Trabaja con una lista de líneas
+  let Lineas = [];
+
+  // Parte superior
+  for (let Posicion = 0; Posicion <= 200; Posicion += 20) {
+	Lineas.push(new Linea(200, Posicion, Posicion + 200, 200, Grosor, 'blue'));
+	Lineas.push(new Linea(200, Posicion, 200 - Posicion, 200, Grosor, 'blue'));
+  }
+
+  //Parte inferior
+  for (let Posicion = 400; Posicion >= 200; Posicion += -20) {
+	Lineas.push(new Linea(200, Posicion, 600 - Posicion, 200, Grosor, 'blue'));
+	Lineas.push(new Linea(200, Posicion, Posicion - 200, 200, Grosor, 'blue'));
+  }
+  
+  //Dibuja las líneas: Lista
+  Graficos.LineasListas(Lineas);
+</script>
+</body></html>

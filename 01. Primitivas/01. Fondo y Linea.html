@@ -1,0 +1,21 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Fondo y Línea</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="400" height="400"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+//Borde y fondo del lienzo
+let ColorRelleno = 'blue';
+let GrosorBorde = 10;
+let ColorBorde = 'red';
+Graficos.LienzoFondoBorde(ColorRelleno, GrosorBorde, ColorBorde);
+
+//Dibuja la línea Xini, Yini, Xfin, Yfin, Grosor, Color
+let ColorLinea = Graficos.ColorRGB(22, 184, 168); //En formato RGB
+let Xini = 150, Yini = 70;
+let Xfin = 340, Yfin = 350;
+let Grosor = 5;
+Graficos.Linea(Xini, Yini, Xfin, Yfin, Grosor, ColorLinea);
+</script>
+</body></html>

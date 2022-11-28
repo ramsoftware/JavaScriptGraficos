@@ -1,0 +1,34 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Líneas Horizontales</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="600"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+//Trabaja con una lista de líneas
+let Lineas = [];
+
+//Grosor de las líneas
+let Grosor = 3;
+
+//Primer gráfico
+let contador = 10;
+let incremento = 2;
+do {
+	Lineas.push(new Linea(10, contador, 300, contador, Grosor, 'blue'));
+	incremento++;
+	contador += incremento; //Incrementa el espacio entre línea y línea
+} while (contador <= 602);
+
+//Segundo gráfico
+contador -= incremento;
+incremento = 2;
+do {
+	Lineas.push(new Linea(300, contador, 590, contador, Grosor, 'red'));
+	incremento++;
+	contador -= incremento;
+} while (contador >= 10);
+
+Graficos.LineasListas(Lineas);
+</script>
+</body></html>

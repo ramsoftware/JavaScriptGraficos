@@ -1,0 +1,26 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Girar polígomo de 4 lados</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="1200"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Dibuja un Poligono de 4 Lados: posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, Grosor, Color
+  let ColorBorde = 'blue';
+  let posX1 = 110, posY1 = 110;
+  let posX2 = 190, posY2 = 230;
+  let posX3 = 320, posY3 = 130;
+  let posX4 = 220, posY4 = 174;
+  let Grosor = 4;
+  let Tipo = 1;
+  poligono = new Poligono4Lados(posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, Tipo, Grosor, ColorBorde);
+  
+  //Dibuja el polígono
+  Graficos.objPoligono4Lados(poligono);
+  
+  //Gira el polígono
+  poligono.Girar(90);
+  Graficos.objPoligono4Lados(poligono);  
+  
+</script>
+</body></html>

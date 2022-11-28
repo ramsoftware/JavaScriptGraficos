@@ -1,0 +1,23 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Líneas al azar</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="800" height="800"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+//Lista de líneas
+let Lineas = [];
+for (let cont = 1; cont <= 30; cont++){
+    let Color = Graficos.ColorAzar(); //Algún color al azar
+    let Grueso = AzarEnteroEntre(1, 10); //Grueso entre 1 y 10
+
+    //Trabaja con una lista de líneas
+    let Xini = AzarEnteroEntre(1, 800); let Yini = AzarEnteroEntre(1, 800);
+    let Xfin = AzarEnteroEntre(1, 800); let Yfin = AzarEnteroEntre(1, 800);
+    Lineas.push(new Linea(Xini, Yini, Xfin, Yfin, Grueso, Color));
+}
+
+//Dibuja las líneas: Lista
+Graficos.LineasListas(Lineas);
+</script>
+</body></html>

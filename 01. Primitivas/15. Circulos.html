@@ -1,0 +1,26 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Círculo</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="1200"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Dibuja un Círculo
+  let posX = 150, posY = 120;
+  let Radio = 90;
+  let GrosorBorde = 8;
+  let ColorBorde = 'blue';
+  Graficos.Circulo(posX, posY, Radio, GrosorBorde, ColorBorde);
+
+  //Dibuja un Círculo relleno
+  posX = 400;
+  posY = 200;
+  let ColorRelleno = 'green'
+  Graficos.CirculoRelleno(posX, posY, Radio, ColorRelleno);
+
+  //Dibuja un Círculo relleno con borde
+  posX = 550;
+  posY = 400;
+  Graficos.CirculoRellenoBorde(posX, posY, Radio, ColorRelleno, GrosorBorde, ColorBorde);
+</script>
+</body></html>

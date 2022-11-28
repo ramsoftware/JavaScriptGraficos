@@ -1,0 +1,32 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Polígono de 4 lados</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="1200"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Dibuja un Poligono de 4 Lados: posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, Grosor, Color
+  let ColorBorde = 'blue';
+  let posX1 = 10, posY1 = 10;
+  let posX2 = 90, posY2 = 130;
+  let posX3 = 220, posY3 = 30;
+  let posX4 = 120, posY4 = 74;
+  let Grosor = 4;
+  Graficos.Poligono4Lados(posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, Grosor, ColorBorde);
+
+  //Dibuja un Poligono de 4 Lados relleno: posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, ColorRelleno
+  let ColorRelleno  ='gray';
+  posX1 = 10; posY1 = 210;
+  posX2 = 190; posY2 = 330;
+  posX3 = 420; posY3 = 130;
+  posX4 = 420; posY4 = 84;
+  Graficos.Poligono4LadosRelleno(posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, ColorRelleno);
+
+  //Dibuja un Poligono de 4 Lados relleno con borde: posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, ColorRelleno, GrosorBorde, ColorBorde
+  posX1 = 10; posY1 = 470;
+  posX2 = 190; posY2 = 560;
+  posX3 = 420; posY3 = 480;
+  posX4 = 520; posY4 = 194;
+  Graficos.Poligono4LadosRellenoBorde(posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, ColorRelleno, Grosor, ColorBorde);
+</script>
+</body></html>

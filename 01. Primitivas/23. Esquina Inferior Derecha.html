@@ -1,0 +1,33 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Esquina inferior derecha</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="600"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+//Grosor de las líneas
+let Grosor = 2;
+
+//Trabaja con una lista de líneas
+let Lineas = [];
+
+let xval = 600;
+let yval = 300;
+
+do {
+	Lineas.push(new Linea(xval, 300 - yval, xval, 300 + yval, Grosor, 'blue'));
+	xval -= 5;
+	yval -= 5;
+}while (yval >= 0);
+
+xval = 300;
+yval = 600;
+do {
+	Lineas.push(new Linea(300 - xval, yval, 300 + xval, yval, Grosor, 'red'));
+	xval -= 5;
+	yval -= 5;
+}while (yval >= 300);
+
+Graficos.LineasListas(Lineas);
+</script>
+</body></html>

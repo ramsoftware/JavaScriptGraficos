@@ -1,0 +1,28 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Alternando</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Grosor de las líneas
+  let Grosor = 2;
+
+  //Trabaja con una lista de líneas
+  let Lineas = [];
+  let variar = 0;
+
+  for (let cont = 1; cont <= 18; cont++) {
+    Lineas.push(new Linea(380 - variar, 380 - variar, 380 + variar, 380 - variar, Grosor, 'blue'));
+    Lineas.push(new Linea(380 - variar, 380 - variar, 380 - variar, 380 + variar, Grosor, 'blue'));
+    variar += 10;
+
+    Lineas.push(new Linea(380 - variar, 380 + variar, 380 + variar, 380 + variar, Grosor, 'red'));
+    Lineas.push(new Linea(380 - variar, 380 - variar, 380 - variar, 380 + variar, Grosor, 'red'));
+    variar += 10;
+  }
+
+  //Dibuja las líneas: Lista
+  Graficos.LineasListas(Lineas);
+</script>
+</body></html>

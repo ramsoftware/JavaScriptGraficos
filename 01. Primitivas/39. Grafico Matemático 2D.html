@@ -1,0 +1,19 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Gráfico matemático 2D</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="800" height="600"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+//Hace el gráfico matemático 2D
+let Ecuacion = "x*sen(x)";
+let Xini = -1;
+let Xfin = 20;
+let numPuntos = 100;
+let Grosor = 2;
+let Color = 'blue';
+
+Graficos.Matematico2D(Ecuacion, Xini, Xfin, numPuntos, Grosor, Color);
+  
+</script>
+</body></html>

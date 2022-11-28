@@ -1,0 +1,31 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Lista de polígonos de 4 lados</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="800" height="800"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Lista de triángulos
+  let GrupoPoligono4Lados = [];
+
+  //Genera polígonos de 4 lados al azar
+  for (let cont = 1; cont <= 5; cont++){
+    let ColorRelleno = Graficos.ColorAzar(); //Algún color al azar
+    let ColorBorde = Graficos.ColorAzar(); //Algún color al azar
+    let GrosorBorde = AzarEnteroEntre(1, 10); //Grueso entre 1 y 10
+
+    //Coordenadas de las cuatro esquinas del polígono de 4 lados
+    let posX1 = AzarEnteroEntre(1, 150); let posY1 = AzarEnteroEntre(1, 150);
+    let posX2 = AzarEnteroEntre(400, 800); let posY2 = AzarEnteroEntre(1, 150);
+    let posX3 = AzarEnteroEntre(400, 800); let posY3 = AzarEnteroEntre(300, 500);
+    let posX4 = AzarEnteroEntre(1, 150); let posY4 = AzarEnteroEntre(300, 500);
+
+    //Tipo de triángulo: 1. Solo borde, 2. Sólo relleno, 3. Borde y relleno
+    let Tipo = AzarEnteroEntre(1, 3);
+
+    GrupoPoligono4Lados.push(new Poligono4Lados(posX1, posY1, posX2, posY2, posX3, posY3, posX4, posY4, Tipo, GrosorBorde, ColorBorde, ColorRelleno));
+  }
+
+  Graficos.Poligono4LadosLista(GrupoPoligono4Lados);
+</script>
+</body></html>

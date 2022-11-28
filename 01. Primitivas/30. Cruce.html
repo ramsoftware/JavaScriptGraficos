@@ -1,0 +1,27 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Cruce</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Grosor de las líneas
+  let Grosor = 2;
+
+  //Trabaja con una lista de líneas
+  let Lineas = [];
+  let cont = 0;
+
+  do {
+    Lineas.push(new Linea(cont, 600, 600, cont, Grosor, 'blue'));
+    Lineas.push(new Linea(1200 - cont, 600, 600, cont, Grosor, 'red'));
+    Lineas.push(new Linea(1200 - cont, 0, 600, 600 - cont, Grosor, 'gray'));
+    Lineas.push(new Linea(cont, 0, 600, 600 - cont, Grosor, 'green'));
+    cont += 20;
+  }
+  while (cont <= 600);
+
+  //Dibuja las líneas: Lista
+  Graficos.LineasListas(Lineas);
+</script>
+</body></html>

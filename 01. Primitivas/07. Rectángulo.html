@@ -1,0 +1,24 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Rectángulo</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="1200"></canvas>
+<script>
+    //Objeto para hacer los gráficos
+    let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+    //Dibuja un rectángulo: posX, posY, Ancho, Alto, Grosor, Color
+    let ColorBorde = 'blue';
+    let posX = 10, posY = 10;
+    let Ancho = 90, Alto = 50;
+    let Grosor = 4;
+    Graficos.Rectangulo(posX, posY, Ancho, Alto, Grosor, ColorBorde);
+
+    //Dibuja un rectángulo relleno: posX, posY, Ancho, Alto, ColorRelleno
+    let ColorRelleno  ='gray';
+    posX = 10; posY = 210;
+    Graficos.RectanguloRelleno(posX, posY, Ancho, Alto, ColorRelleno);
+
+    //Dibuja un rectángulo relleno con borde: posX, posY, Ancho, Alto, ColorRelleno, GrosorBorde, ColorBorde
+    posX = 10; posY = 370;
+    Graficos.RectanguloRellenoBorde(posX, posY, Ancho, Alto, ColorRelleno, Grosor, ColorBorde);
+</script>
+</body></html>

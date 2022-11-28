@@ -1,0 +1,29 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Lista de círculos</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="800" height="800"></canvas>
+<script>
+    //Objeto para hacer los gráficos
+    let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+    //Lista de triángulos
+    let Circulos = [];
+
+    //Genera circulos al azar
+    for (let cont = 1; cont <= 5; cont++){
+        let ColorRelleno = Graficos.ColorAzar(); //Algún color al azar
+        let ColorBorde = Graficos.ColorAzar(); //Algún color al azar
+        let GrosorBorde = AzarEnteroEntre(3, 10); //Grueso entre 3 y 10
+
+        //Propiedades para cada círculo
+        let posX = AzarEnteroEntre(100, 400); let posY = AzarEnteroEntre(100, 400);
+        let Radio = AzarEnteroEntre(10, 100);
+
+        //Tipo de círculo: 1. Sólo borde, 2. Sólo relleno, 3. Borde y relleno
+        let Tipo = AzarEnteroEntre(1, 3);
+
+        Circulos.push(new Circulo(posX, posY, Radio, Tipo, GrosorBorde, ColorBorde, ColorRelleno));
+    }
+
+    Graficos.CirculoLista(Circulos);
+</script>
+</body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Girar triángulo</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+//Datos de un triángulo: posX1, posY1, posX2, posY2, posX3, posY3, Grosor, Color
+let ColorBorde = 'blue';
+let posX1 = 100, posY1 = 100;
+let posX2 = 90, posY2 = 230;
+let posX3 = 220, posY3 = 130;
+let GrosorBorde = 4;
+let Tipo = 1;
+
+//Instancia el objeto triángulo
+unTriangulo = new Triangulo(posX1, posY1, posX2, posY2, posX3, posY3, Tipo, GrosorBorde, ColorBorde, 'white');
+
+//Dibuja el triángulo
+Graficos.objTriangulo(unTriangulo);
+
+//Gira el triángulo y lo dibuja
+unTriangulo.Girar(90);
+Graficos.objTriangulo(unTriangulo);
+
+</script>
+</body></html>

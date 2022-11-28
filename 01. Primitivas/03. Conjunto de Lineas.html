@@ -1,0 +1,22 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Conjunto de Líneas</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="600"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+let Color = Graficos.ColorAzar(); //Algún color al azar
+let GrosorLinea = AzarEnteroEntre(2, 10); //Grueso entre 1 y 10
+
+//Trabaja con una lista de líneas
+let Lineas = [];
+Lineas.push(new Linea(150, 150, 300, 300, GrosorLinea, Color)); //Xini, Yini, Xfin, Yfin, Grueso, Color
+Lineas.push(new Linea(200, 50, 120, 350, GrosorLinea, Color));
+Lineas.push(new Linea(300, 140, 210, 290, GrosorLinea, Color));
+Lineas.push(new Linea(320, 240, 110, 220, GrosorLinea, Color));
+Lineas.push(new Linea(270, 340, 310, 260, GrosorLinea, Color));
+
+//Dibuja las líneas: Lista
+Graficos.LineasListas(Lineas);
+</script>
+</body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Polígono</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="900" height="500"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+
+//Genera el polígono con una lista de puntos
+let Color = Graficos.ColorRGB(254, 0, 0); //En rojo
+let Grosor = 5;
+let Puntos = [];
+Puntos.push(new Punto(50, 150));
+Puntos.push(new Punto(150, 50));
+Puntos.push(new Punto(250, 140));
+Puntos.push(new Punto(350, 200));
+Puntos.push(new Punto(400, 300));
+Puntos.push(new Punto(300, 350));
+Puntos.push(new Punto(250, 150));
+Graficos.Poligono(Puntos, Grosor, Color);
+
+//Poligono relleno
+Puntos = [];
+Puntos.push(new Punto(350, 150));
+Puntos.push(new Punto(400, 50));
+Puntos.push(new Punto(500, 140));
+Puntos.push(new Punto(600, 200));
+Puntos.push(new Punto(650, 300));
+Puntos.push(new Punto(550, 350));
+Puntos.push(new Punto(500, 150));
+Graficos.PoligonoRelleno(Puntos, Grosor, 'blue');
+
+//Poligono relleno con borde
+Puntos = [];
+Grosor = 10;
+Puntos.push(new Punto(550, 150));
+Puntos.push(new Punto(600, 50));
+Puntos.push(new Punto(700, 140));
+Puntos.push(new Punto(800, 200));
+Puntos.push(new Punto(850, 300));
+Puntos.push(new Punto(750, 350));
+Puntos.push(new Punto(700, 150));
+Graficos.PoligonoRellenoBorde(Puntos, 'blue', Grosor, 'green');
+
+</script>
+</body></html>

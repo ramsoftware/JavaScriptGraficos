@@ -1,0 +1,18 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Cadenas</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="600"></canvas>
+<script>
+//Objeto para hacer los gráficos
+let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+//Color en formato RGB
+let Color = Graficos.ColorRGB(254, 0, 0); //En rojo
+
+//Dibuja una cadena: PosX, PosY, Texto, Color, Fuente
+Graficos.DibujarCadenas(10, 70, "Esta es una prueba", Color, 'bold 60pt Courier');
+
+//Dibuja una cadena con color de relleno
+Graficos.DibujarCadenasRelleno(10, 190, "Texto con color de relleno", Color, 'bold 40pt Courier');
+
+</script>
+</body></html>

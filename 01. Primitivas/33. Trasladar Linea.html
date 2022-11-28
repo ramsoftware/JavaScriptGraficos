@@ -1,0 +1,22 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Trasladar línea</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Grosor de las líneas
+  let Grosor = 2;
+  
+  //Instancia una línea y la dibuja
+  let Color = 'blue';
+  let MiLinea = new Linea(10, 10, 210, 180, Grosor, Color);
+  Graficos.objLinea(MiLinea);
+  
+  //La traslada
+  let MueveX = 280;
+  let MueveY = 50;
+  MiLinea.Trasladar(MueveX, MueveY);
+  Graficos.objLinea(MiLinea);
+</script>
+</body></html>

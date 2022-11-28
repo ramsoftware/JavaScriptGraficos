@@ -1,0 +1,27 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Rectángulos concéntricos</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Grosor de las líneas
+  let Grosor = 2;
+
+  //Trabaja con una lista de líneas
+  let Lineas = [];
+  let variar = 0;
+  let centro = 380;
+
+  for (let cont = 1; cont <= 30; cont += 1) {
+    Lineas.push(new Linea(centro - variar, centro - variar, centro - variar + variar * 2, centro - variar, Grosor, Graficos.ColorAzar()));
+    Lineas.push(new Linea(centro - variar, centro - variar, centro - variar, centro - variar + variar * 2, Grosor, Graficos.ColorAzar()));
+    Lineas.push(new Linea(centro - variar + variar * 2, centro - variar, centro - variar + variar * 2, centro - variar + variar * 2, Grosor, Graficos.ColorAzar()));
+    Lineas.push(new Linea(centro - variar, centro - variar + variar * 2, centro - variar + variar * 2, centro - variar + variar * 2, Grosor, Graficos.ColorAzar()));
+    variar = variar + 10;
+  }
+
+  //Dibuja las líneas: Lista
+  Graficos.LineasListas(Lineas);
+</script>
+</body></html>

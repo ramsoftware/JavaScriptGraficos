@@ -1,0 +1,22 @@
+<!DOCTYPE HTML><html lang='es'><head><title>Celdas</title></head><body>
+<script src="LibreriaGrafica.js"></script>
+<canvas id="milienzo" width="1200" height="800"></canvas>
+<script>
+  //Objeto para hacer los gráficos
+  let Graficos = new LibreriaGrafica(document.getElementById('milienzo'));
+
+  //Grosor de los rectángulos
+  let GrosorBorde = 2;
+
+  //Lista de rectángulos
+  let Rectangulos = [];
+  let Tipo = 1;
+
+  for (let Fila = 0; Fila <= 10; Fila++) {
+	for (let Columna = 0; Columna <= 10; Columna++)
+		Rectangulos.push(new Rectangulo(Fila * 35 + 80, Columna * 35 + 40, 30, 30, Tipo, GrosorBorde, 'blue', 'black'));	
+  }
+
+  Graficos.RectanguloLista(Rectangulos);
+</script>
+</body></html>
